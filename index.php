@@ -10,13 +10,15 @@
     <?php
 
       class Rooms {
-        public $floor;
         public $name;
+        public $floor;
         public $pricePerNight;
         public $nights;
 
-        function __construct($name){
+        function __construct($name, $pricePerNight, $nights){
           $this -> name = $name;
+          $this -> pricePerNight = $pricePerNight;
+          $this -> nights = $nights;
         }
 
         // public function reservationPrice($nights) {
@@ -35,19 +37,16 @@
         }
       }
 
-      $res1 = new Rooms(A101);
-      //$res1 -> name = 'A101';
+      $res1 = new Rooms(A101, 150, 3);
       $res1 -> floor = 1;
-      $res1 -> pricePerNight = 150;
-      $res1 -> nights = 3;
+      // $res1 -> pricePerNight = 150;
+      // $res1 -> nights = 3;
       $res1 -> printMe();
 
       echo " ---- <br>";
 
-      $res2 = new Rooms(A202);
+      $res2 = new Rooms(A202, 120, 4);
       $res2 -> floor = 2;
-      $res2 -> pricePerNight = 120;
-      $res2 -> nights = 4;
       $res2 -> printMe();
 
 
