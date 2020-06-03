@@ -13,25 +13,39 @@
         public $floor;
         public $name;
         public $pricePerNight;
-        public function reservationPrice($nights) {
-          return $this -> pricePerNight * $nights;
-        };
-        
+        public $nights;
+
+        // public function reservationPrice($nights) {
+        //   return $this -> pricePerNight * $nights;
+        // }
+        public function reservationPrice() {
+          return $this -> pricePerNight * $this -> nights;
+        }
+
+        public function printMe(){
+          echo "Room floor: " . $this -> floor . "<br>";
+          echo "Room name/number: ". $this -> name.  "<br>";
+          echo "Price per night: € ". $this -> pricePerNight . "<br>";
+          echo "Number of nights ". $this -> nights . "<br>";
+          echo "Total reservation amount: € ". $this -> reservationPrice() . "<br>";
+        }
       }
 
       $res1 = new Rooms();
-      echo "Room floor: " . $res1 -> floor = 1 . "<br>";
-      echo "Room name/number: ". $res1 -> name = 'A101' . "<br>";
-      echo "Price per night: € ". $res1 -> pricePerNight = 150 . "<br>";
-      echo "Total reservation amount: € ". $res1 -> reservationPrice(3) . "<br>";
+      $res1 -> floor = 1;
+      $res1 -> name = 'A101';
+      $res1 -> pricePerNight = 150;
+      $res1 -> nights = 3;
+      $res1 -> printMe();
 
       echo " ---- <br>";
 
       $res2 = new Rooms();
-      echo "Room floor: " . $res2 -> floor = 2 . "<br>";
-      echo "Room name/number: ". $res2 -> name = 'A201' . "<br>";
-      echo "Price per night: € ". $res2 -> pricePerNight = 120 . "<br>";
-      echo "Total reservation amount: € ". $res2 -> reservationPrice(4) . "<br>";
+      $res2 -> floor = 2;
+      $res2 -> name = 'A203';
+      $res2 -> pricePerNight = 120;
+      $res2 -> nights = 4;
+      $res2 -> printMe();
 
 
      ?>
